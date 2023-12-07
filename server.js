@@ -19,13 +19,13 @@ result.resources.map ( i => console.log(i.type, i.format, i.public_id, i.secure_
 
 
 // UPLOAD RESOURCE
- // desde url
-//cloudinary.uploader.upload(
-//  "https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
-//  { use_filename: true },
-//  function(error, result) {console.log(result); }
-//);
-
+/* // desde url
+cloudinary.uploader.upload(
+  "https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
+  { use_filename: true },
+  function(error, result) {console.log(result); }
+);
+*/
 
 /* // desde sistema de archivos
 cloudinary.uploader.upload(
