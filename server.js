@@ -2,9 +2,9 @@
 import {v2 as cloudinary} from 'cloudinary';
 
 cloudinary.config({
-  cloud_name: 'dk30psegu',
-  api_key: '465847383997254',
-  api_secret: 'sO-QQtHtLfseNI0cOhbPJma7zVA'
+  cloud_name: 'demo',
+  api_key: '465997383997254',
+  api_secret: 'sO-QQtHtLfseNI0vhhbPJma7zVA'
 });
 
 
