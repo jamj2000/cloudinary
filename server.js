@@ -2,24 +2,28 @@
 import {v2 as cloudinary} from 'cloudinary';
 
 cloudinary.config({
-  cloud_name: 'demo',
-  api_key: '465997383997254',
-  api_secret: 'sO-QQtHtLfseNI0vhhbPJma7zVA'
+  cloud_name: 'your cloud name',
+  api_key: 'your api key',
+  api_secret: 'your api secret'
 });
 
 
+//const callback = (result) => console.log(result)                                // callback
+
 
 // LIST RESOURCES
-//const callback = (result) => console.log(result)                                // callback
+/*
 //cloudinary.api.resources({max_results: 500, tags: true }).then(callback)       // con callback
 
 const result = await cloudinary.api.resources({max_results: 500, tags: true })    // con top-level await
 result.resources.map ( i => console.log(i.type, i.format, i.public_id, i.secure_url, i.tags) )
 //console.log(result) // toda la información
+*/
 
 
 // UPLOAD RESOURCE
-/* // desde url
+/* 
+// desde url
 cloudinary.uploader.upload(
   "https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
   { use_filename: true },
@@ -27,12 +31,36 @@ cloudinary.uploader.upload(
 );
 */
 
-/* // desde sistema de archivos
+/* 
+// desde sistema de archivos
 cloudinary.uploader.upload(
   "avatar.png",
   { public_id: "avatar" },
   function(error, result) {console.log(result); }
 );
+*/
+
+/* 
+// hacia carpeta/subcarpeta creada al vuelo
+// In order to automatically create the folders based on the API requests, 
+// please go to your account upload settings and set the 'Auto-create folders' option to enabled. 
+cloudinary.uploader.upload(
+  "camiseta.jpg",
+  {  public_id: "productos/ropa/camiseta" },
+  function(error, result) {console.log(result); }
+);
+*/
+
+
+// LIST RESOURCES INTO SUBFOLDER
+/*
+const result = await cloudinary.api.resources({
+	 type: 'upload',
+         prefix: 'productos/ropa',         // folder and subfolders
+         max_results: 500,
+         tags: true
+})
+result.resources.map ( i => console.log(i.type, i.format, i.public_id, i.secure_url, i.tags) )
 */
 
 
