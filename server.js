@@ -1,12 +1,15 @@
+// APIs
+// https://cloudinary.com/documentation/image_upload_api_reference
 // https://cloudinary.com/documentation/admin_api
 import {v2 as cloudinary} from 'cloudinary';
 
+/*
 cloudinary.config({
   cloud_name: 'your cloud name',
   api_key: 'your api key',
   api_secret: 'your api secret'
 });
-
+*/
 
 //const callback = (result) => console.log(result)                                // callback
 
@@ -52,6 +55,21 @@ cloudinary.uploader.upload(
 */
 
 
+/*
+// Subir imagen transformada
+// https://cloudinary.com/documentation/transformations_on_upload
+const result = await cloudinary.uploader
+  .upload("paisaje.jpg", {
+    folder: "galeria", 
+    public_id: "paisaje.jpg",  
+    aspect_ratio: "1.62", 
+    width: 600, 
+    crop: "lfill"});
+
+console.log(result);
+*/
+
+
 // LIST RESOURCES INTO SUBFOLDER
 /*
 const result = await cloudinary.api.resources({
@@ -93,8 +111,18 @@ result.resources.map ( i => console.log(i.type, i.format, i.public_id, i.secure_
 //]})
 //console.log(image)
 
+// CLOUDINARY.IMAGE
+// const img = cloudinary.image("paisaje.jpg", {aspect_ratio: "1.62", width: 600, crop: "lfill"})
+// console.log(img)
+// Resultado: 
+//  <img src='http://res.cloudinary.com/dk30psegu/image/upload/ar_1.62,c_lfill,w_600/paisaje.jpg' width='600'/>
+
+// CLOUDINARY.URL
 // const url = cloudinary.url("samples/people/smiling-man", {background: "blue", height: 300, width: 300, crop: "pad"})
 // console.log(url)
+// Resultado: 
+//  http://res.cloudinary.com/dk30psegu/image/upload/b_blue,c_pad,h_300,w_300/v1/samples/people/smiling-man
+
 
 // Transformaciones en Cloudinary
 // https://cloudinary.com/documentation/image_transformations
